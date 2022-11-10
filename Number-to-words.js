@@ -2,7 +2,8 @@ function toNum(str) {
   for (i = 0; i < str.length; i++) {
     if (str[i] == "0") {
       str.replace("0", "");
-    } else {
+    } 
+    else {
       break;
     }
   }
@@ -126,7 +127,8 @@ function twoDig(num) {
         str = "ninety";
         break;
     }
-  } else if (num.toString()[0] == "1") {
+  } 
+  else if (num.toString()[0] == "1") {
     switch (num) {
       case 11:
         str = "eleven";
@@ -156,7 +158,8 @@ function twoDig(num) {
         str = "nineteen";
         break;
     }
-  } else {
+  } 
+  else {
     str = twoDig(Number(num.toString()[0] + "0")) + "-" + single(num % 10);
   }
   return str;
@@ -166,10 +169,12 @@ function threeDig(num) {
   str = "";
   if (num % 100 == 0) {
     str = single(Number(num.toString()[0])) + "-hundred";
-  } else if (num.toString()[1] == "0") {
+  } 
+  else if (num.toString()[1] == "0") {
     str =
       threeDig(Number(num.toString()[0]) + "00") + " and " + single(num % 10);
-  } else {
+  } 
+  else {
     str =
       threeDig(Number(num.toString()[0]) + "00") + " and " + twoDig(num % 100);
   }
@@ -180,11 +185,9 @@ function fourDig(num) {
   str = "";
   if (num % 1000 == 0) {
     str = single(Number(num.toString()[0])) + "-thousand";
-  } else {
-    str =
-      fourDig(Number(num.toString()[0]) + "000") +
-      ", " +
-      convert(num.toString().slice(1));
+  } 
+  else {
+    str = fourDig(Number(num.toString()[0]) + "000") + ", " + convert(num.toString().slice(1));
   }
   return str;
 }
@@ -193,11 +196,9 @@ function fiveDig(num) {
   let str = "";
   if (num % 1000 == 0) {
     str = twoDig(Number(num.toString()[0] + num.toString()[1])) + "-thousand";
-  } else {
-    str =
-      fiveDig(Number(num.toString()[0] + num.toString()[1] + "000")) +
-      ", " +
-      convert(num.toString().slice(2));
+  } 
+  else {
+    str = fiveDig(Number(num.toString()[0] + num.toString()[1] + "000")) + ", " + convert(num.toString().slice(2));
   }
   return str;
 }
@@ -206,13 +207,10 @@ function sixDig(num) {
   let str = "";
   if (num % 100000 == 0) {
     str = single(Number(num.toString()[0])) + "-lac";
-  } else {
-    str =
-      sixDig(Number(num.toString()[0] + "00000")) +
-      ", " +
-      convert(num.toString().slice(1));
+  } 
+  else {
+    str = sixDig(Number(num.toString()[0] + "00000")) + ", " + convert(num.toString().slice(1));
   }
-
   return str;
 }
 
@@ -220,13 +218,10 @@ function sevenDig(num) {
   let str = "";
   if (num % 1000000 == 0) {
     str = single(Number(num.toString()[0])) + "-million";
-  } else {
-    str =
-      sevenDig(Number(num.toString()[0] + "000000")) +
-      ", " +
-      convert(num.toString().slice(1));
+  } 
+  else {
+    str = sevenDig(Number(num.toString()[0] + "000000")) + ", " + convert(num.toString().slice(1));
   }
-
   return str;
 }
 
@@ -234,31 +229,20 @@ function eightDig(num) {
   let str = "";
   if (num % 1000000 == 0) {
     str = twoDig(Number(num.toString()[0] + num.toString()[1])) + "-million";
-  } else {
-    str =
-      eightDig(Number(num.toString()[0] + num.toString()[1]) + "000000") +
-      ", " +
-      convert(num.toString().slice(2));
+  } 
+  else {
+    str = eightDig(Number(num.toString()[0] + num.toString()[1]) + "000000") + ", " + convert(num.toString().slice(2));
   }
-
   return str;
 }
 
 function nineDig(num) {
   let str = "";
   if (num % 1000000 == 0) {
-    str =
-      threeDig(
-        Number(num.toString()[0] + num.toString()[1] + num.toString()[2])
-      ) + "-million";
-  } else {
-    str =
-      nineDig(
-        Number(num.toString()[0] + num.toString()[1] + num.toString()[2]) +
-          "000000"
-      ) +
-      ", " +
-      convert(num.toString().slice(3));
+    str = threeDig(Number(num.toString()[0] + num.toString()[1] + num.toString()[2])) + "-million";
+  } 
+  else {
+    str = nineDig(Number(num.toString()[0] + num.toString()[1] + num.toString()[2]) +"000000") + ", " + convert(num.toString().slice(3));
   }
   return str;
 }
@@ -267,11 +251,9 @@ function tenDig(num) {
   let str = "";
   if (num % 1000000000 == 0) {
     str = single(Number(num.toString()[0])) + "-billion";
-  } else {
-    str =
-      tenDig(Number(num.toString()[0] + "000000000")) +
-      ", " +
-      convert(num.toString().slice(1));
+  } 
+  else {
+    str = tenDig(Number(num.toString()[0] + "000000000")) + ", " + convert(num.toString().slice(1));
   }
   return str;
 }
@@ -280,11 +262,9 @@ function elevenDig(num) {
   let str = "";
   if (num % 1000000000 == 0) {
     str = twoDig(Number(num.toString()[0] + num.toString()[1])) + "-billion";
-  } else {
-    str =
-      elevenDig(Number(num.toString()[0] + num.toString()[1] + "000000000")) +
-      ", " +
-      convert(num.toString().slice(2));
+  } 
+  else {
+    str = elevenDig(Number(num.toString()[0] + num.toString()[1] + "000000000")) + ", " + convert(num.toString().slice(2));
   }
   return str;
 }
@@ -292,31 +272,22 @@ function elevenDig(num) {
 function twelveDig(num) {
   let str = "";
   if (num % 1000000000 == 0) {
-    str =
-      threeDig(
-        Number(num.toString()[0] + num.toString()[1] + num.toString()[2])
-      ) + "-billion";
-  } else {
-    str =
-      twelveDig(
-        Number(
-          num.toString()[0] +
-            num.toString()[1] +
-            num.toString()[2] +
-            "000000000"
-        )
-      ) +
-      ", " +
-      convert(num.toString().slice(3));
+    str = threeDig(Number(num.toString()[0] + num.toString()[1] + num.toString()[2])) + "-billion";
+  } 
+  else {
+    str = twelveDig(Number(num.toString()[0] + num.toString()[1] + num.toString()[2] + "000000000")) + ", " + convert(num.toString().slice(3));
   }
   return str;
 }
 
-function bigDig(str) {
+function bigDig(str) 
+{
   let str1 = str.slice(0, -12);
   let str2 = str.slice(-12);
   return convert(str1) + "-trillion, " + convert(str2);
 }
+
+
 
 let x = prompt("Enter number: ");
 console.log(x + " converted to: " + convert(x));
