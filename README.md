@@ -1,4 +1,1 @@
-This node package converts numbers to English words upto unlimited length.
-Commands:
-npm install number-to-english-words
-npx number-to-english-words
+Both of these programs (index.ts and index.js) takes a number as input and converts it to English words upto unlimited length.
