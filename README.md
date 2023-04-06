@@ -3,9 +3,7 @@ Converts a numeric input to its equivalent English words representation.
 - Number should be passed as a string in quotation marks '' or ""
 - Can do conversion upto 36 digits (that's nine hundred and ninety nine decillion)
 ## Installation
-```npm install number-to-english-words```
-and then
-```npx number-to-english-words```
+```npm install number-to-english-words```  and then  ```npx number-to-english-words```
 ## Usage
 To use the numberToWords function in your project, require it from the number-to-words package and call it with a numeric input. Here's an example:
 ```javascript
