@@ -9,9 +9,7 @@ To use this package in your project. Install by running command
 ## Usage
 To use the numberToWords function in your project, require it from the number-to-words package and call it with a numeric input. Here's an example:
 ```javascript
-const { convertToEnglish } = require('number-to-english-words');
-// or in ECMA
-// import { convertToEnglish } from 'number-to-english-words'
+import { convertToEnglish } from 'number-to-english-words'
 
 const num = '12345';
 const words = convertToEnglish(num);
